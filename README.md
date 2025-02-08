@@ -72,23 +72,23 @@ Inside Database, create a file FinanceDbContext.cs
 
 Add the following code:
 
-using Microsoft.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore;
 
-namespace PersonalFinanceTracker.Database
-{
-    public class FinanceDbContext : DbContext
+    namespace PersonalFinanceTracker.Database
     {
-        public DbSet<Transaction> Transactions { get; set; }
-        public DbSet<Category> Categories { get; set; }
-        public DbSet<Budget> Budgets { get; set; }
-        public DbSet<User> Users { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public class FinanceDbContext : DbContext
         {
-            optionsBuilder.UseSqlite("Data Source=finance.db");
+            public DbSet<Transaction> Transactions { get; set; }
+            public DbSet<Category> Categories { get; set; }
+            public DbSet<Budget> Budgets { get; set; }
+            public DbSet<User> Users { get; set; }
+    
+            protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+            {
+                optionsBuilder.UseSqlite("Data Source=finance.db");
+            }
         }
     }
-}
 
 📌 Run Database Migrations
 
