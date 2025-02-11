@@ -1,13 +1,13 @@
 # 5010_Finance
-## Personal Finance Tracker using Avalonia UI
+## Personal Finance Tracker using .NET MAUI (Mac & Windows)
 
 The Personal Finance Tracker App aims to simplify personal financial management, offering a user-friendly interface that empowers users to make better financial decisions.
 
 ## Introduction
-This is a cross-platform **Personal Finance Tracker** built using **Avalonia UI**. It allows users to manage their expenses, set budgets, and track financial goals.
+This is a cross-platform **Personal Finance Tracker** built using **.NET MAUI**. It allows users to manage their expenses, set budgets, and track financial goals on both macOS and Windows.
 
 ## Features
-- **Cross-Platform**: Works on macOS, Windows, and Linux
+- **Cross-Platform**: Works on macOS and Windows
 - **Expense Tracking**: Log income and expenses
 - **Budgeting System**: Set and manage monthly budgets
 - **Financial Reports**: Generate charts and insights
@@ -17,31 +17,27 @@ This is a cross-platform **Personal Finance Tracker** built using **Avalonia UI*
 
 ## 🔹 Step 1: Install Required Tools
 Before setting up the project, ensure you have:
-✅ **.NET 6, 8, or 9 SDK** installed
-✅ **VS Code with C# Dev Kit**
+✅ **.NET 8 or 9 SDK** installed
+✅ **VS Code or Visual Studio 2022** (Mac/Windows)
+✅ **.NET MAUI Workload** installed
 ✅ **SQLite for database storage**
 
-### 📌 Install Avalonia UI Templates
+### 📌 Install .NET MAUI Workload
 ```sh
-dotnet new install Avalonia.Templates
+dotnet workload install maui
 ```
 Verify installation:
 ```sh
-dotnet new list | grep Avalonia
+dotnet workload list
 ```
-If installed correctly, you should see templates like `avalonia.app`, `avalonia.mvvm`, etc.
+If installed correctly, you should see `.NET MAUI` listed.
 
 ---
 
 ## 🔹 Step 2: Set Up the Project
-### 📌 Create a New Avalonia UI Project
-#### **Standard Avalonia UI Application**
+### 📌 Create a New .NET MAUI App
 ```sh
-dotnet new avalonia.app -o PersonalFinanceTracker
-```
-#### **MVVM-Based Avalonia Application (Recommended)**
-```sh
-dotnet new avalonia.mvvm -o PersonalFinanceTracker
+dotnet new maui -o PersonalFinanceTracker
 ```
 #### **Navigate to the Project Folder**
 ```sh
@@ -63,21 +59,21 @@ dotnet restore
 ```sh
 dotnet build
 ```
-### 📌 Run the App
+### 📌 Run the App (Mac & Windows)
 ```sh
 dotnet run
 ```
-✅ Your Avalonia UI app should now launch on macOS, Windows, or Linux!
+✅ Your .NET MAUI app should now launch on macOS or Windows!
 
 ---
 
 ## 🔹 Step 4: Project Structure
 📂 **PersonalFinanceTracker**  
 ├── 📂 **Views** *(UI Screens - XAML files)*  
-│   ├── `MainWindow.axaml` → Dashboard  
-│   ├── `TransactionsView.axaml` → Add/Edit Transactions  
-│   ├── `BudgetView.axaml` → Budget Management  
-│   ├── `ReportsView.axaml` → Analytics & Charts  
+│   ├── `MainPage.xaml` → Dashboard  
+│   ├── `TransactionsPage.xaml` → Add/Edit Transactions  
+│   ├── `BudgetPage.xaml` → Budget Management  
+│   ├── `ReportsPage.xaml` → Analytics & Charts  
 │  
 ├── 📂 **ViewModels** *(Handles UI Logic - MVVM Pattern)*  
 │   ├── `MainViewModel.cs`  
@@ -94,9 +90,9 @@ dotnet run
 ├── 📂 **Database** *(SQLite DB & Data Access Layer)*  
 │   ├── `FinanceDbContext.cs`  
 │  
-├── `App.axaml` → Entry point  
-├── `App.axaml.cs` → App startup logic  
-├── `MainWindow.axaml` → Main UI  
+├── `App.xaml` → Entry point  
+├── `App.xaml.cs` → App startup logic  
+├── `MainPage.xaml` → Main UI  
 
 ---
 
@@ -141,10 +137,9 @@ dotnet ef database update
 
 ## 🔹 Step 6: Next Steps
 Now that the core setup is complete, you can:
-✅ **Design the Main Window UI (`MainWindow.axaml`)**
+✅ **Design the Main Page UI (`MainPage.xaml`)**
 ✅ **Implement Transaction & Budget Management Features**
 ✅ **Integrate Database with UI**
 
 🚀 Happy Coding! 🎯
-
 
