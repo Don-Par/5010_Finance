@@ -1,10 +1,10 @@
 # 5010_Finance
-## Personal Finance Tracker using .NET MAUI (Mac & Windows)
+## Personal Finance Tracker using Avalonia UI (Windows & macOS)
 
 The Personal Finance Tracker App aims to simplify personal financial management, offering a user-friendly interface that empowers users to make better financial decisions.
 
 ## Introduction
-This is a cross-platform **Personal Finance Tracker** built using **.NET MAUI**. It allows users to manage their expenses, set budgets, and track financial goals on both macOS and Windows.
+This is a cross-platform **Personal Finance Tracker** built using **Avalonia UI**. It allows users to manage their expenses, set budgets, and track financial goals on both macOS and Windows.
 
 ## Features
 - **Cross-Platform**: Works on macOS and Windows
@@ -19,25 +19,25 @@ This is a cross-platform **Personal Finance Tracker** built using **.NET MAUI**.
 Before setting up the project, ensure you have:
 ✅ **.NET 8 or 9 SDK** installed
 ✅ **VS Code or Visual Studio 2022** (Mac/Windows)
-✅ **.NET MAUI Workload** installed
+✅ **Avalonia UI Templates installed**
 ✅ **SQLite for database storage**
 
-### 📌 Install .NET MAUI Workload
+### 📌 Install Avalonia UI Templates
 ```sh
-dotnet workload install maui
+dotnet new install Avalonia.Templates
 ```
 Verify installation:
 ```sh
-dotnet workload list
+dotnet new list | grep Avalonia
 ```
-If installed correctly, you should see `.NET MAUI` listed.
+If installed correctly, you should see templates like `avalonia.app`, `avalonia.mvvm`, etc.
 
 ---
 
 ## 🔹 Step 2: Set Up the Project
-### 📌 Create a New .NET MAUI App
+### 📌 Create a New Avalonia UI Project
 ```sh
-dotnet new maui -o PersonalFinanceTracker
+dotnet new avalonia.app -o PersonalFinanceTracker
 ```
 #### **Navigate to the Project Folder**
 ```sh
@@ -63,17 +63,17 @@ dotnet build
 ```sh
 dotnet run
 ```
-✅ Your .NET MAUI app should now launch on macOS or Windows!
+✅ Your Avalonia UI app should now launch on macOS or Windows!
 
 ---
 
 ## 🔹 Step 4: Project Structure
 📂 **PersonalFinanceTracker**  
 ├── 📂 **Views** *(UI Screens - XAML files)*  
-│   ├── `MainPage.xaml` → Dashboard  
-│   ├── `TransactionsPage.xaml` → Add/Edit Transactions  
-│   ├── `BudgetPage.xaml` → Budget Management  
-│   ├── `ReportsPage.xaml` → Analytics & Charts  
+│   ├── `MainWindow.axaml` → Dashboard  
+│   ├── `TransactionsView.axaml` → Add/Edit Transactions  
+│   ├── `BudgetView.axaml` → Budget Management  
+│   ├── `ReportsView.axaml` → Analytics & Charts  
 │  
 ├── 📂 **ViewModels** *(Handles UI Logic - MVVM Pattern)*  
 │   ├── `MainViewModel.cs`  
@@ -90,9 +90,9 @@ dotnet run
 ├── 📂 **Database** *(SQLite DB & Data Access Layer)*  
 │   ├── `FinanceDbContext.cs`  
 │  
-├── `App.xaml` → Entry point  
-├── `App.xaml.cs` → App startup logic  
-├── `MainPage.xaml` → Main UI  
+├── `App.axaml` → Entry point  
+├── `App.axaml.cs` → App startup logic  
+├── `MainWindow.axaml` → Main UI  
 
 ---
 
@@ -137,9 +137,10 @@ dotnet ef database update
 
 ## 🔹 Step 6: Next Steps
 Now that the core setup is complete, you can:
-✅ **Design the Main Page UI (`MainPage.xaml`)**
+✅ **Design the Main Window UI (`MainWindow.axaml`)**
 ✅ **Implement Transaction & Budget Management Features**
 ✅ **Integrate Database with UI**
 
 🚀 Happy Coding! 🎯
+
 
