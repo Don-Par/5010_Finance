@@ -1,0 +1,18 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="PersonalFinanceTracker.Views.MainWindow"
+        Title="Personal Finance Tracker"
+        Width="800"
+        Height="500">
+    <Grid>
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Left" Width="200" Background="LightGray">
+                <Button Content="Transactions" Click="OpenTransactionsPage" Margin="5"/>
+                <Button Content="Budgets" Click="OpenBudgetsPage" Margin="5"/>
+                <Button Content="Reports" Click="OpenReportsPage" Margin="5"/>
+            </StackPanel>
+
+            <ContentControl x:Name="ContentArea" />
+        </DockPanel>
+    </Grid>
+</Window>

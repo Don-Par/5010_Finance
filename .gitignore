@@ -1,0 +1,13 @@
+bin/
+obj/
+*.db
+*.db-shm
+*.db-wal
+.vscode/
+.idea/
+*.user
+*.suo
+*.bak
+*.swp
+*.pid
+*.log
